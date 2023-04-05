@@ -13,7 +13,7 @@ const nickName = document.getElementById("nickname"),
         0: {
             outputPrefix: "/nick ",
             template: "{#$1$2$3$4$5$6}$f$c",
-            formatChar: "{",
+            formatChar: "&",
             maxLength: 256
         },
         1: {
@@ -25,7 +25,7 @@ const nickName = document.getElementById("nickname"),
         2: {
             outputPrefix: "",
             template: "{#$1$2$3$4$5$6}$f$cc",
-            formatChar: "{",
+            formatChar: "&",
             maxLength: 256
         },
 
