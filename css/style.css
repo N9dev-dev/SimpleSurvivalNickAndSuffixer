@@ -1,3 +1,4 @@
+
 .color {
   width: 100%;
 }
@@ -18,8 +19,14 @@
 .errortext {
   color:darkred;
 }
-.cpypstt {
-  color: #A020F0;
+.rb {
+  position:relative;
+  background: linear-gradient(to right, #ff0000, #ffae00 , #ffee00, #09ff00, #d400ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: color_animation 8s ease-in-out infinite;
+  background-size: 400% 100%;
   outline-width: 0.5rem;
   outline: thin;
 }
@@ -126,15 +133,15 @@ footer{
   margin-right:auto;
   margin-top:120px;
 }
-#title {
-    position:relative;
-    background: linear-gradient(to right, #141414, #302f2f , #1b1919, #333030, #222020);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: color_animation 8s ease-in-out infinite;
-    background-size: 400% 100%;
-}
+/* #title {
+  position:relative;
+  background: linear-gradient(to right, #ff0000, #ffae00 , #ffee00, #09ff00, #d400ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: color_animation 8s ease-in-out infinite;
+  background-size: 400% 100%;
+} */
 #inputs{
   position: relative;
 }

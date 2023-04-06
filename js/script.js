@@ -33,6 +33,22 @@ const nickName = document.getElementById("nickname"),
         // Davi
         8: {
             colors: ["00c0cc", "cc00c4", "cc00c4"]
+        },
+        // Crock
+        9: {
+            colors: ["ff2aea", "ff3fb0", "ff5575", "ff6a3b", "ff7f00"]
+        },
+        // Cookie
+        10: {
+            colors: ["25ffe5", "1fccea", "1899ef", "1266f5", "0b33fa", "0500ff"]
+        },
+        // mochi
+        11: {
+            colors: ["90d35b", "a6de75", "bce890", "d1f3aa", "e7fdc4"]
+        },
+        //th3
+        12: {
+            colors: ["65adcd", "75b6d2", "86bfd7", "96c8dc", "a7d1e1", "b8dae6"]
         }
     },
     formats = {
@@ -44,7 +60,7 @@ const nickName = document.getElementById("nickname"),
         },
         1: {
             outputPrefix: "/nick ",
-            template: "&x&$1&$2&$3&$4&$5&$6$f$c",
+            template: "<#$1$2$3$4$5$6>$f$c",
             formatChar: "&",
             maxLength: 256
         },
@@ -56,6 +72,18 @@ const nickName = document.getElementById("nickname"),
         },
 
     };
+
+
+
+    function CopyToClipboard(id)
+    {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    }
 
 function darkMode() {
     1 == document.getElementById("darkmode").checked ? (document.body.classList.add("dark"), document.getElementById("output-format").classList.add("dark"), document.getElementById("color-preset").classList.add("dark"), document.getElementById("numOfColors").classList.add("dark"), document.getElementById("graylabel1").classList.replace("gray", "darkgray"), document.getElementById("graylabel2").classList.replace("gray", "darkgray"), document.getElementById("outputText").classList.replace("gray", "darkgray"), document.getElementById("outputText").classList.replace("gray", "darkgray"), document.getElementById("error").classList.replace("errortext", "darkerrortext"), document.getElementById("numOfColors").classList.add("darktextboxes"), document.getElementById("nickname").classList.add("darktextboxes"), document.getElementById("outputText").classList.add("darktextboxes"), Array.from(document.getElementsByClassName("hexColor")).forEach((e => {
@@ -158,7 +186,7 @@ function updateOutputText(e) {
         nickName.value.match(t) || (nickName.value = nickName.value.replace(e.data, "")), nickName.value.match(t) || (nickName.value = "birdflop.com")
     }
     let o = nickName.value;
-    o || (o = "Type something!");
+    o || (o = "nothing?");
     const r = document.getElementById("bold").checked,
         a = document.getElementById("italics").checked,
         l = document.getElementById("underline").checked,
@@ -211,5 +239,9 @@ function Alert(){
     Alert("Nope.");
 }
 
-toggleColors(2), updateOutputText()
+toggleColors(2);
+updateOutputText();
+document.getElementById('darkmode').checked = true
+darkMode()
+
 

@@ -12,14 +12,14 @@
   
     <div id="hexColorTemplate" style="display:none;">
       <div class="row">
-        <label for="color-$NUM">Hex Color #$NUM</label>
+        <label class="" for="color-$NUM">Hex Color #$NUM</label>
         <input class="form-control col-md-1 hexColor" id="color-$NUM" style="border-radius: 10px;" value="$VAL" data-jscolor="{preset:'small dark', position:'right'}" oninput="javascript: updateOutputText(event)" onchange="javascript: updateOutputText(event); Cookies.set(`#${$NUM}`, document.getElementById('color-$NUM').value, { expires: 7, path: '' })">
       </div>
     </div>
     
     <div id="content">
-      <h1 id="title">Simple Nick Namer</h1>
-      <p id="graylabel1" class="gray" style="padding-bottom: 10px;">Deffo By Dev.</p>
+      <h1 class="rb">Simple Nick Namer</h1>
+      <p id="graylabel1" class="gray" style="padding-bottom: 10px;">Deffo By <span class="rb">Dev</span>.</p>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-2" style="padding-left: 0;">
@@ -30,9 +30,9 @@
             <div class="container-fluid">
               <div class="row">
                 <div id="output">
-                  <label id="label4" for="outputText">Output Value</label>
-                  <label id="graylabel2" class="cpypstt" for="outputText" style="font-weight: normal;">Click to Copy</label>
-                  <pre id="outputText" style="border-radius: 10px; white-space: pre-wrap; height: 70px; margin-right: 15px; font-family: MinecraftRegular; margin-bottom: 5px;" onclick="copyTextToClipboard(this.textContent);"></pre>
+                  <label class="" id="label4" for="outputText">Output Value</label>
+                  <label class="" id="graylabel2" class="rb" for="outputText" style="font-weight: normal;">Click to Copy</label>
+                  <pre id="outputText" style="border-radius: 10px; white-space: pre-wrap; height: 70px; margin-right: 15px; font-family: MinecraftRegular; margin-bottom: 5px;" onclick="CopyToClipboard('outputText');return false;"></pre>
                   <p id="error">Exceeded 256 character limit.</p>
                 </div>
               </div>
@@ -41,23 +41,23 @@
               </div>
               <div class="row">
                 <div class="col-md-3" style="padding-left: 0;">
-                  <label for="nickname">Nick:</label>
+                  <label class="" for="nickname">Nick:</label>
                   <input class="form-control" id="nickname" type="text" maxlength="100" placeholder="Your Nickname" value="DevIsCool" oninput="javascript: updateOutputText(event);" onchange="javascript: updateOutputText(event)">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-3" style="padding-left: 0;">
-                  <label for="output-format">Format:</label>
+                  <label class="" for="output-format">Format:</label>
                   <select id="output-format" class="form-control" onchange="updateOutputText(event);">
-                    <option value="0">MVPs/VIPs {#rrggbb}</option>
-                    <option value="1">Donos (&x&r&r&g&g&b&b)</option>
-                    <option value="2">MVPs Suffix {#rrggbb}</option>
+                    <option value="0">/nick {#rrggbb}</option>
+                    <option value="1">/nick <#rrggbb></option>
+                    <option value="2">Suffix {#rrggbb}</option>
                   </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-3" style="padding-left: 0;">
-                  <label for="color-preset">Preset:</label>
+                  <label  class="" for="color-preset">Preset:</label>
                   <select id="color-preset" class="form-control" onchange="preset(this.value); updateOutputText(event); ">
                     <option value="0">None</option>
                     <option value="1">Raiinnnbooww</option>
@@ -68,34 +68,38 @@
                     <option value="6">Baron</option>
                     <option value="7">Shirafune</option>
                     <option value="8">Davi</option>
+                    <option value="9">Crock</option>
+                    <option value="10">Cookei</option>
+                    <option value="11">Mochi</option>
+                    <option value="12">Themis</option>
                   </select>
                 </div>
               </div>
               <div class="row">
-                <label for="numOfColors">Amount of Colors for da gradient(s):</label>
+                <label class="" for="numOfColors">Amount of Colors for da <span class="rb">gradient(s)</span>:</label>
                 <input class="form-control" style="width: 75px;" value="2" id="numOfColors" type="number" min="2" max="10" onchange="updateOutputText(event); toggleColors(this.value);" oninput="updateOutputText(event); toggleColors(this.value);">
               </div>
               <div class="row">
                 <div id="dbold">
                   <input type="checkbox" id="bold" onclick="updateOutputText(event);">
-                  <label for="bold"><strong>Bold</strong></label>
+                  <label class="" for="bold"><strong>Bold</strong></label>
                 </div>
                 <div id="ditalics">
                   <input type="checkbox" id="italics" onclick="updateOutputText(event);">
-                  <label for="italics"><i>Italic</i></label>
+                  <label class="" for="italics"><i>Italic</i></label>
                 </div>
                 <div id="dunderline">
                   <input type="checkbox" id="underline" onclick="updateOutputText(event);">
-                  <label id="underline" for="underline">Underline</label>
+                  <label class="" id="underline" for="underline">Underline</label>
                 </div>
                 <div id="dstrike">
                   <input type="checkbox" id="strike" onclick="updateOutputText(event);">
-                  <label id="strike" for="strike">Strikethrough</label>
+                  <label class="" id="strike" for="strike">Strikethrough</label>
                 </div>
                 <div id="appearance">
-                  <input type="checkbox" id="darkmode" onclick="Alert();">
-                  <label for="darkmode" style="margin-bottom: 0px;margin-top: 0px;">Screw Dark Mode</label>
-                </div>
+                  <input type="checkbox" id="darkmode" onclick="darkMode();">
+                  <label class="" for="darkmode" style="margin-bottom: 0px;margin-top: 0px;">Dark Mode</label>
+                </div>  
               </div>
             </div>
           </div>
@@ -107,7 +111,12 @@
     
 
   <footer>
-    <p>Yeah, I just stole it then lil bit edit for the SimpleSurvival Community.</a> Original: rgb.birdflop.com. Bentooch says hi 💕👋 , Phoenix server on top. 🪶</p>
+    <h1 id="">How to add a preset</h1>
+
+
+
+
+    <p>Send your /nick to nw9r#2568 and with-in days your colors should be up</p>
   </footer>
 
 </body></html>
