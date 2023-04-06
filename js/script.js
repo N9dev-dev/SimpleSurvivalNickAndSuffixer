@@ -33,6 +33,30 @@ const nickName = document.getElementById("nickname"),
         // Davi
         8: {
             colors: ["00c0cc", "cc00c4", "cc00c4"]
+        },
+        // Crock
+        9: {
+            colors: ["ff2aea", "ff3fb0", "ff5575", "ff6a3b", "ff7f00"]
+        },
+        // Cookie
+        10: {
+            colors: ["25ffe5", "1fccea", "1899ef", "1266f5", "0b33fa", "0500ff"]
+        },
+        // mochi
+        11: {
+            colors: ["90d35b", "a6de75", "bce890", "d1f3aa", "e7fdc4"]
+        },
+        //th3
+        12: {
+            colors: ["65adcd", "75b6d2", "86bfd7", "96c8dc", "a7d1e1", "b8dae6"]
+        },
+        //bunny
+        13: {
+            colors: ["d6d8fb", "d9d4fb", "dbd0fc", "decdfc", "e1c9fc", "e3c5fd", "e6c1fd"]
+        },
+        //scrooge
+        14: {
+            colors: ["fb0000", "fc1d05", "fc390a", "fd5610", "fe7313", "fe8f1a", "ffac1f"]
         }
     },
     formats = {
