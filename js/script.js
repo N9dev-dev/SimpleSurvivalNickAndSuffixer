@@ -2,11 +2,37 @@ const nickName = document.getElementById("nickname"),
     coloredNick = document.getElementById("coloredNick"),
     savedColors = ["A020F0", "ffeeff", getRandomHexColor(), getRandomHexColor(), getRandomHexColor(), getRandomHexColor(), getRandomHexColor(), getRandomHexColor(), getRandomHexColor(), getRandomHexColor()],
     presets = {
+        // none
         1: {
             colors: ["FF0000", "FF7F00", "FFFF00", "00FF00", "0000FF", "4B0082", "9400D3"]
         },
+        // me
         2: {
             colors: ["3494E6", "4B8FDF", "628BD8", "7986D1", "9081CA", "A77CC2", "BE78BB", "D573B4", "EC6EAD"]
+        },
+        // ben
+        3: {
+            colors: ["621493", "54117e", "460e69", "380b54", "2a093f", "1c062a", "0e0315", "000000"]
+        },
+        // mel
+        4: {
+            colors: ["5098ff", "3e95fe", "2d93fc", "1b90fb", "2889ec", "3481dc", "417acd"]
+        },
+        // Lissi
+        5: {
+            colors: ["8b00cc", "9c34f6", "ae69ee", "bf9de5", "A2A9B3", "A2A9B3", "a2c7e0", "73bce4", "45b1e8"]
+        },
+        // baron
+        6: {
+            colors: ["d00000", "e4800a", "dad200", "07d003", "0014cb"]
+        },
+        // Shira
+        7: {
+            colors: ["fb48f7", "eb44ed", "da3fe2", "ca3bd8", "ba36ce", "a932c3", "992db9", "8829ae", "7824a4"]
+        },
+        // Davi
+        8: {
+            colors: ["00c0cc", "cc00c4", "cc00c4"]
         }
     },
     formats = {
@@ -24,7 +50,7 @@ const nickName = document.getElementById("nickname"),
         },
         2: {
             outputPrefix: "",
-            template: "{#$1$2$3$4$5$6}$f$cc",
+            template: "{#$1$2$3$4$5$6}$f$c",
             formatChar: "&",
             maxLength: 256
         },
